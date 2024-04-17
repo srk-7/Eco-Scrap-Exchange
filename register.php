@@ -15,7 +15,18 @@
 
 <body>
 
-  <?php include ('header.php'); ?>
+<?php
+  include ('header.php');
+  if (!isset($_SESSION['id'])) {
+    ?>
+    <script>
+      document.getElementById('nav-item-services').style.display = 'none';
+      document.getElementById('nav-item-purchase').style.display = 'none';
+      document.getElementById('nav-item-bookboard').style.display = 'none';
+    </script>
+    <?php
+  }
+  ?>
 
   <div class="container" id="about">
     <center>
